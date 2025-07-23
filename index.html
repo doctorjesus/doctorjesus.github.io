@@ -2,74 +2,92 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Doctor Jesus | Portal</title>
+  <title>Doctor Jesus | Home</title>
   <style>
-    /* Body with background image */
-    body {
-      background-image: url('https://i.postimg.cc/s2VHgRx3/Doctorjesus-nun.jpg');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      background-repeat: no-repeat;
-      color: #ffffff;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      text-align: center;
-      padding: 2rem;
+    html, body {
       margin: 0;
+      padding: 0;
+      height: 100%;
+      background: url('https://i.postimg.cc/s2VHgRx3/Doctorjesus-nun.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      animation: fadeIn 2s ease-in, shake 10s infinite;
+      overflow: hidden;
     }
 
-    /* Optional translucent overlay for readability */
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0, 0, 0, 0.7); /* dim overlay */
-      z-index: -1;
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes shake {
+      0%, 100% { background-position: center; }
+      25% { background-position: center left 2px; }
+      50% { background-position: center right 2px; }
+      75% { background-position: center left 1px; }
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% {
+        filter: drop-shadow(0 0 5px #ff4444);
+      }
+      50% {
+        filter: drop-shadow(0 0 20px #ff0000);
+      }
     }
 
     .logo {
       display: block;
-      margin: 0 auto 1.5rem auto;
+      margin: 2rem auto 1rem auto;
       max-width: 250px;
       height: auto;
-      filter: drop-shadow(0 0 10px #ff000099);
+      animation: pulseGlow 6s infinite ease-in-out;
+    }
+
+    nav {
+      background: rgba(0, 0, 0, 0.6);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 1rem;
+      padding-top: 4.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      z-index: 100;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+      padding: 0.5rem 1rem;
+      border-radius: 1rem;
+    }
+
+    nav a:hover {
+      background: #ff000033;
+      box-shadow: 0 0 10px #ff000088;
+    }
+
+    main {
+      position: relative;
+      z-index: 1;
+      top: 35vh;
+      text-align: center;
     }
 
     h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
+      font-size: 3rem;
+      text-shadow: 0 0 10px #ff4444;
     }
 
-    .tagline {
+    p {
       font-style: italic;
       color: #ccc;
-      margin-bottom: 2rem;
-    }
-
-    .link-grid {
-      margin-top: 2rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      align-items: center;
-    }
-
-    .link-grid a {
-      color: white;
-      text-decoration: none;
-      border: 1px solid #ffffff44;
-      padding: 0.75rem 1.5rem;
-      border-radius: 2rem;
-      transition: all 0.3s ease;
-      font-weight: bold;
-      background-color: #111;
-      box-shadow: 0 0 10px #ffffff22;
-    }
-
-    .link-grid a:hover {
-      background-color: #ffffff11;
-      border-color: #ffffff88;
-      box-shadow: 0 0 15px #ffffff55;
     }
   </style>
 </head>
@@ -77,15 +95,18 @@
 
   <img src="https://i.postimg.cc/JnLNz7tn/355-doctor.png" alt="Doctor Jesus Logo" class="logo" />
 
-  <h1>Doctor Jesus</h1>
-  <p class="tagline">Bridging the Quantum Realm with Love</p>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="codex.html">Codex</a>
+    <a href="music.html">Music</a>
+    <a href="merch.html">Merch</a>
+    <a href="prophecy.html">Prophecy</a>
+  </nav>
 
-  <div class="link-grid">
-    <a href="https://books2read.com/u/mZMlRD" target="_blank">📘 Aeon Codex: Volume I</a>
-    <a href="https://books2read.com/u/mvwzel" target="_blank">📙 Aeon Codex: Volume II</a>
-    <a href="https://www.youtube.com/@show.me.wicked" target="_blank">🎥 YouTube Channel</a>
-    <a href="https://doctorjesus.bandcamp.com/" target="_blank">🎵 Music on Bandcamp</a>
-  </div>
+  <main>
+    <h1>Doctor Jesus</h1>
+    <p>Bridging the Quantum Realm with Love</p>
+  </main>
 
 </body>
 </html>
