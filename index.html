@@ -15,7 +15,6 @@
       animation: fadeIn 2s ease-in;
     }
 
-    /* Full background image behavior */
     body::before {
       content: "";
       position: fixed;
@@ -26,21 +25,14 @@
       background: url('https://i.postimg.cc/s2VHgRx3/Doctorjesus-nun.jpg') no-repeat center center;
       background-size: cover;
       z-index: -1;
-      animation: shake 6s infinite ease-in-out;
-    }
-
-    @media (min-width: 1024px) {
-      body::before {
-        background-size: contain;
-        background-repeat: no-repeat;
-      }
+      animation: shake 8s infinite ease-in-out;
     }
 
     @keyframes shake {
       0%, 100% { transform: translateX(0); }
-      25% { transform: translateX(-10px); }
+      25% { transform: translateX(-5px); }
       50% { transform: translateX(0); }
-      75% { transform: translateX(10px); }
+      75% { transform: translateX(5px); }
     }
 
     @keyframes fadeIn {
