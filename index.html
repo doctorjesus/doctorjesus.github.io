@@ -31,12 +31,12 @@
     }
 
     .slide:nth-child(1) {
-      background-image: url('https://i.postimg.cc/RFXFfM61/blank-Temple.jpg');
+      background-image: url('https://i.postimg.cc/RFXFfM61/blank-Temple.jpg'); /* Model-less FIRST */
       animation-delay: 0s, 0s;
     }
 
     .slide:nth-child(2) {
-      background-image: url('https://i.postimg.cc/s2VHgRx3/Doctorjesus-nun.jpg');
+      background-image: url('https://i.postimg.cc/s2VHgRx3/Doctorjesus-nun.jpg'); /* Model image SECOND */
       animation-delay: 13s, 13s;
     }
 
@@ -58,8 +58,7 @@
     .logo {
       max-width: 300px; width: 50vw;
       position: absolute; top: 50%; left: 50%;
-      /* reduced to 2× size */
-      transform: translate(-50%,-50%) scale(2);
+      transform: translate(-50%,-50%);
       animation: pulseGlow 6s infinite ease-in-out;
       z-index: 1;
     }
@@ -87,8 +86,8 @@
 <body>
 
   <div class="slideshow">
-    <div class="slide"></div>
-    <div class="slide"></div>
+    <div class="slide"></div> <!-- Now shows blank temple first -->
+    <div class="slide"></div> <!-- Then Doctor Jesus appears -->
   </div>
 
   <img src="https://i.postimg.cc/JnLNz7tn/355-doctor.png"
