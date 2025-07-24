@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <title>Doctor Jesus | Prophecy</title>
+  <!-- Load MedievalSharp font -->
+  <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
   <style>
     html, body {
       margin: 0;
@@ -21,7 +23,17 @@
       to { opacity: 1; }
     }
 
-    @keyframes goldPulse {
+    @keyframes glowPulseRed {
+      0%, 100% { text-shadow: 0 0 12px #ff0000; }
+      50% { text-shadow: 0 0 24px #ff4444; }
+    }
+
+    @keyframes glowPulseGold {
+      0%, 100% { text-shadow: 0 0 8px #FFD700; }
+      50% { text-shadow: 0 0 20px #FFD700; }
+    }
+
+    @keyframes goldPulseImage {
       0%, 100% {
         filter: drop-shadow(0 0 5px #FFD700);
       }
@@ -63,9 +75,12 @@
       text-align: center;
     }
 
-    h2 {
-      font-size: 2rem;
-      text-shadow: 0 0 10px #ff4444;
+    .ep-title {
+      font-family: 'MedievalSharp', cursive;
+      font-size: 2.2rem;
+      color: #ff3333;
+      text-shadow: 0 0 12px #ff0000;
+      animation: glowPulseRed 4s ease-in-out infinite;
       margin-bottom: 1rem;
     }
 
@@ -83,15 +98,18 @@
     }
 
     .aeon-title {
+      font-family: 'MedievalSharp', cursive;
       font-size: 2rem;
       text-shadow: 0 0 12px #FFD700;
+      color: #FFD700;
+      animation: glowPulseGold 6s ease-in-out infinite;
       margin-bottom: 1rem;
     }
 
     .aeon-image {
       max-width: 60%;
       height: auto;
-      animation: goldPulse 6s infinite ease-in-out;
+      animation: goldPulseImage 6s infinite ease-in-out;
       border-radius: 1rem;
     }
   </style>
@@ -107,7 +125,7 @@
   </nav>
 
   <div class="content">
-    <h2>Upcoming EP Release</h2>
+    <div class="ep-title">Upcoming EP Release</div>
     <img src="https://i.postimg.cc/kMtp0QT7/Ep.jpg" alt="Doctor Jesus EP" class="ep-cover" />
 
     <div class="aeon-title">Forthcoming Volume III – The Aeon Codex</div>
