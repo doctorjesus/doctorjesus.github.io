@@ -7,7 +7,7 @@
     /* Page fade-in */
     @keyframes fadeIn {
       from { opacity: 0; }
-      to { opacity: 1; }
+      to   { opacity: 1; }
     }
 
     /* Slow zoom effect */
@@ -32,14 +32,25 @@
       50%      { opacity: 0.25; }
     }
 
+    /* Glow for secret link */
+    @keyframes pulseGlow {
+      0%,100% { filter: drop-shadow(0 0 10px #ff4444); }
+      50%     { filter: drop-shadow(0 0 25px #ff0000); }
+    }
+
     body {
-      margin: 0; padding: 0; height: 100%; overflow: hidden;
-      font-family: 'Segoe UI', sans-serif; color: #fff;
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      font-family: 'Segoe UI', sans-serif;
+      color: #fff;
       animation: fadeIn 2s ease-in;
     }
 
     .background {
-      position: fixed; top: 0; left: 0;
+      position: fixed;
+      top: 0; left: 0;
       width: 100%; height: 100%;
       background: url('https://i.postimg.cc/mDRTPnbG/Lady-magdalene-temple.jpg') no-repeat center center fixed;
       background-size: cover;
@@ -49,7 +60,8 @@
     }
 
     .glow-overlay {
-      position: fixed; top: 0; left: 0;
+      position: fixed;
+      top: 0; left: 0;
       width: 100%; height: 100%;
       background: radial-gradient(ellipse at center, rgba(255, 0, 0, 0.2), transparent 70%);
       pointer-events: none;
@@ -57,30 +69,55 @@
       z-index: -1;
     }
 
-    @keyframes pulseGlow {
-      0%,100% { filter: drop-shadow(0 0 10px #ff4444); }
-      50%     { filter: drop-shadow(0 0 25px #ff0000); }
-    }
-
     .logo {
-      max-width: 300px; width: 50vw;
-      position: absolute; top: 50%; left: 50%;
-      transform: translate(-50%,-50%);
+      max-width: 300px;
+      width: 50vw;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       animation: pulseGlow 6s infinite ease-in-out;
       z-index: 1;
     }
 
+    .secret-link {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: transparent;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.2rem;
+      z-index: 2;
+      transition: color 0.5s ease;
+      pointer-events: auto;
+    }
+
+    .secret-link:hover {
+      color: #ff4444;
+      text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;
+    }
+
     nav {
-      position: fixed; top: 0; left: 0; width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
       background: rgba(0,0,0,0.6);
       padding: 1rem .5rem .5rem;
-      display: flex; justify-content: center; gap: 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
       z-index: 2;
     }
 
     nav a {
-      color: #fff; text-decoration: none; font-weight: bold;
-      padding: .5rem 1rem; border-radius: 1rem;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      padding: .5rem 1rem;
+      border-radius: 1rem;
       transition: .3s;
     }
 
@@ -90,28 +127,13 @@
     }
 
     footer {
-      position: absolute; bottom: 1rem; width: 100%;
-      text-align: center; font-size: 0.9rem; color: #ccc;
+      position: absolute;
+      bottom: 1rem;
+      width: 100%;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #ccc;
       font-family: 'Segoe UI', sans-serif;
-    }
-
-    /* Easter egg link styling */
-    .easter-egg {
-      position: fixed;
-      bottom: 5px;
-      right: 10px;
-      font-size: 0.8rem;
-      color: transparent;
-      text-decoration: none;
-      transition: 0.5s;
-      z-index: 10;
-      font-family: monospace;
-    }
-
-    .easter-egg:hover {
-      color: #ff4444;
-      text-shadow: 0 0 10px #ff0000;
-      cursor: pointer;
     }
   </style>
 </head>
@@ -119,6 +141,8 @@
 
   <div class="background"></div>
   <div class="glow-overlay"></div>
+
+  <a href="Aion.html" class="secret-link">Ψ̂(f) = f(f)</a>
 
   <img src="https://i.postimg.cc/JnLNz7tn/355-doctor.png"
        alt="Doctor Jesus Logo"
@@ -131,8 +155,6 @@
     <a href="merch.html">Merch</a>
     <a href="prophecy.html">Prophecy</a>
   </nav>
-
-  <a class="easter-egg" href="Aion.html">Ψ̂(f) = f(f)</a>
 
   <footer>
     &copy; 2025 Doctor Jesus. All rites reserved. <br>
