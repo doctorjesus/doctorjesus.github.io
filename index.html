@@ -6,48 +6,28 @@
   <style>
     /* Page fade-in */
     @keyframes fadeIn {
-      from { opacity: 0; } to { opacity: 1; }
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
+
+    @keyframes zoomSlide {
+      0%, 100% { transform: scale(1); }
+      50%      { transform: scale(1.05); }
+    }
+
     body {
       margin: 0; padding: 0; height: 100%; overflow: hidden;
       font-family: 'Segoe UI', sans-serif; color: #fff;
       animation: fadeIn 2s ease-in;
     }
 
-    /* Slideshow container */
-    .slideshow {
+    .background {
       position: fixed; top: 0; left: 0;
-      width: 100%; height: 100%; z-index: -1;
-    }
-    /* Each slide: fade + zoom */
-    .slide {
-      position: absolute; top: 0; left: 0;
       width: 100%; height: 100%;
-      background-size: cover; background-position: center;
-      opacity: 0;
-      animation:
-        fadeSlide 26s linear infinite,
-        zoomSlide 26s ease-in-out infinite;
-    }
-
-    .slide:nth-child(1) {
-      background-image: url('https://i.postimg.cc/RFXFfM61/blank-Temple.jpg'); /* Model-less FIRST */
-      animation-delay: 0s, 0s;
-    }
-
-    .slide:nth-child(2) {
-      background-image: url('https://i.postimg.cc/VvWrSMyK/Lady-Magdalene.jpg'); /* Model image SECOND */
-      animation-delay: 13s, 13s;
-    }
-
-    @keyframes fadeSlide {
-      0%,45%   { opacity: 1; }
-      55%,100% { opacity: 0; }
-    }
-
-    @keyframes zoomSlide {
-      0%,100% { transform: scale(1); }
-      50%     { transform: scale(1.05); }
+      background: url('https://i.postimg.cc/mDRTPnbG/Lady-magdalene-temple.jpg') no-repeat center center fixed;
+      background-size: cover;
+      animation: zoomSlide 26s ease-in-out infinite;
+      z-index: -1;
     }
 
     @keyframes pulseGlow {
@@ -81,14 +61,17 @@
       background: rgba(255,0,0,0.3);
       box-shadow: 0 0 10px #ff0000;
     }
+
+    footer {
+      position: absolute; bottom: 1rem; width: 100%;
+      text-align: center; font-size: 0.9rem; color: #ccc;
+      font-family: 'Segoe UI', sans-serif;
+    }
   </style>
 </head>
 <body>
 
-  <div class="slideshow">
-    <div class="slide"></div> <!-- Now shows blank temple first -->
-    <div class="slide"></div> <!-- Then Doctor Jesus appears -->
-  </div>
+  <div class="background"></div>
 
   <img src="https://i.postimg.cc/JnLNz7tn/355-doctor.png"
        alt="Doctor Jesus Logo"
@@ -102,9 +85,10 @@
     <a href="prophecy.html">Prophecy</a>
   </nav>
 
-  <footer style="position: absolute; bottom: 1rem; width: 100%; text-align: center; font-size: 0.9rem; color: #ccc; font-family: 'Segoe UI', sans-serif;">
+  <footer>
     &copy; 2025 Doctor Jesus. All rites reserved. <br>
     This is the official Temple of Doctor Jesus.
   </footer>
+
 </body>
 </html>
