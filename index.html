@@ -4,29 +4,31 @@
   <meta charset="UTF-8" />
   <title>Doctor Jesus | Home</title>
   <style>
-    /* page fade-in */
+    /* Page fade-in */
     @keyframes fadeIn {
       from { opacity: 0; }
       to   { opacity: 1; }
     }
+
     body {
       margin: 0;
       padding: 0;
       height: 100%;
+      overflow: hidden;
       font-family: 'Segoe UI', sans-serif;
       color: #fff;
-      overflow: hidden;
       animation: fadeIn 2s ease-in;
     }
 
-    /* slideshow container */
+    /* Slideshow container */
     .slideshow {
       position: fixed;
       top: 0; left: 0;
       width: 100%; height: 100%;
       z-index: -1;
     }
-    /* each slide */
+
+    /* Each slide: fades + pans */
     .slide {
       position: absolute;
       top: 0; left: 0;
@@ -34,23 +36,33 @@
       background-size: cover;
       background-position: center;
       opacity: 0;
-      animation: fadeSlide 26s linear infinite;
+      animation:
+        fadeSlide 26s linear infinite,
+        panBg 13s ease-in-out infinite alternate;
     }
+
     .slide:nth-child(1) {
       background-image: url('https://i.postimg.cc/s2VHgRx3/Doctorjesus-nun.jpg');
-      animation-delay: 0s;
+      animation-delay: 0s, 0s;
     }
     .slide:nth-child(2) {
       background-image: url('https://i.postimg.cc/Rh4FJWZZ/blank-wicked-world.jpg');
-      animation-delay: 13s;
+      animation-delay: 13s, 0s;
     }
-    /* 26s loop: each image visible ~45%, then crossfade */
+
+    /* Fade keyframes: show 0–45%, hide 55–100% */
     @keyframes fadeSlide {
       0%, 45%   { opacity: 1; }
       55%,100% { opacity: 0; }
     }
 
-    /* logo pulse */
+    /* Pan keyframes: shift bg-position-x from 47%→53% */
+    @keyframes panBg {
+      0%   { background-position: 47% center; }
+      100% { background-position: 53% center; }
+    }
+
+    /* Logo pulsing */
     @keyframes pulseGlow {
       0%,100% { filter: drop-shadow(0 0 10px #ff4444); }
       50%     { filter: drop-shadow(0 0 25px #ff0000); }
@@ -65,7 +77,7 @@
       z-index: 1;
     }
 
-    /* nav styling */
+    /* Nav styling */
     nav {
       position: fixed;
       top: 0; left: 0;
