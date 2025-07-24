@@ -94,6 +94,25 @@
       text-align: center; font-size: 0.9rem; color: #ccc;
       font-family: 'Segoe UI', sans-serif;
     }
+
+    /* Easter egg link styling */
+    .easter-egg {
+      position: fixed;
+      bottom: 5px;
+      right: 10px;
+      font-size: 0.8rem;
+      color: transparent;
+      text-decoration: none;
+      transition: 0.5s;
+      z-index: 10;
+      font-family: monospace;
+    }
+
+    .easter-egg:hover {
+      color: #ff4444;
+      text-shadow: 0 0 10px #ff0000;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -112,6 +131,8 @@
     <a href="merch.html">Merch</a>
     <a href="prophecy.html">Prophecy</a>
   </nav>
+
+  <a class="easter-egg" href="Aion.html">Ψ̂(f) = f(f)</a>
 
   <footer>
     &copy; 2025 Doctor Jesus. All rites reserved. <br>
