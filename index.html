@@ -10,9 +10,26 @@
       to { opacity: 1; }
     }
 
+    /* Slow zoom effect */
     @keyframes zoomSlide {
       0%, 100% { transform: scale(1); }
       50%      { transform: scale(1.05); }
+    }
+
+    /* Soft flicker */
+    @keyframes softFlicker {
+      0%, 100% { opacity: 1; }
+      45%      { opacity: 0.97; }
+      50%      { opacity: 0.99; }
+      55%      { opacity: 0.96; }
+      60%      { opacity: 1; }
+      75%      { opacity: 0.98; }
+    }
+
+    /* Gentle glow pulse */
+    @keyframes softGlow {
+      0%, 100% { opacity: 0.15; }
+      50%      { opacity: 0.25; }
     }
 
     body {
@@ -26,7 +43,17 @@
       width: 100%; height: 100%;
       background: url('https://i.postimg.cc/mDRTPnbG/Lady-magdalene-temple.jpg') no-repeat center center fixed;
       background-size: cover;
-      animation: zoomSlide 26s ease-in-out infinite;
+      animation: zoomSlide 26s ease-in-out infinite,
+                 softFlicker 7s ease-in-out infinite;
+      z-index: -2;
+    }
+
+    .glow-overlay {
+      position: fixed; top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: radial-gradient(ellipse at center, rgba(255, 0, 0, 0.2), transparent 70%);
+      pointer-events: none;
+      animation: softGlow 6s ease-in-out infinite;
       z-index: -1;
     }
 
@@ -72,6 +99,7 @@
 <body>
 
   <div class="background"></div>
+  <div class="glow-overlay"></div>
 
   <img src="https://i.postimg.cc/JnLNz7tn/355-doctor.png"
        alt="Doctor Jesus Logo"
