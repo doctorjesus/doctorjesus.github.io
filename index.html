@@ -29,31 +29,32 @@
         fadeSlide 26s linear infinite,
         zoomSlide 26s ease-in-out infinite;
     }
+
     .slide:nth-child(1) {
-      background-image: url('https://i.postimg.cc/s2VHgRx3/Doctorjesus-nun.jpg');
+      background-image: url('https://i.postimg.cc/RFXFfM61/blank-Temple.jpg'); /* Model-less FIRST */
       animation-delay: 0s, 0s;
     }
+
     .slide:nth-child(2) {
-      background-image: url('https://i.postimg.cc/RFXFfM61/blank-Temple.jpg');
+      background-image: url('https://i.postimg.cc/s2VHgRx3/Doctorjesus-nun.jpg'); /* Model image SECOND */
       animation-delay: 13s, 13s;
     }
 
-    /* Fade: each image holds 0–45%, then fades 55–100% */
     @keyframes fadeSlide {
       0%,45%   { opacity: 1; }
       55%,100% { opacity: 0; }
     }
-    /* Zoom between 100% → 105% → 100% over 26s */
+
     @keyframes zoomSlide {
       0%,100% { transform: scale(1); }
       50%     { transform: scale(1.05); }
     }
 
-    /* Logo pulsing */
     @keyframes pulseGlow {
       0%,100% { filter: drop-shadow(0 0 10px #ff4444); }
       50%     { filter: drop-shadow(0 0 25px #ff0000); }
     }
+
     .logo {
       max-width: 300px; width: 50vw;
       position: absolute; top: 50%; left: 50%;
@@ -62,7 +63,6 @@
       z-index: 1;
     }
 
-    /* Nav styling */
     nav {
       position: fixed; top: 0; left: 0; width: 100%;
       background: rgba(0,0,0,0.6);
@@ -70,11 +70,13 @@
       display: flex; justify-content: center; gap: 2rem;
       z-index: 2;
     }
+
     nav a {
       color: #fff; text-decoration: none; font-weight: bold;
       padding: .5rem 1rem; border-radius: 1rem;
       transition: .3s;
     }
+
     nav a:hover {
       background: rgba(255,0,0,0.3);
       box-shadow: 0 0 10px #ff0000;
@@ -84,8 +86,8 @@
 <body>
 
   <div class="slideshow">
-    <div class="slide"></div>
-    <div class="slide"></div>
+    <div class="slide"></div> <!-- Now shows blank temple first -->
+    <div class="slide"></div> <!-- Then Doctor Jesus appears -->
   </div>
 
   <img src="https://i.postimg.cc/JnLNz7tn/355-doctor.png"
