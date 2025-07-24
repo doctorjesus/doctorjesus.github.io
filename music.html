@@ -52,7 +52,7 @@
     .content {
       position: relative;
       z-index: 1;
-      top: 35vh;
+      top: 30vh;
       text-align: center;
     }
 
@@ -62,23 +62,25 @@
       margin-bottom: 2rem;
     }
 
-    .music-link {
-      display: block;
-      margin: 1rem auto;
-      padding: 1rem 2rem;
-      background: rgba(255, 0, 0, 0.2);
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      width: fit-content;
-      border-radius: 2rem;
-      border: 1px solid #ff4444;
-      transition: all 0.3s ease;
+    .music-img-link {
+      display: inline-block;
+      margin: 1rem;
+      border-radius: 1rem;
+      border: 2px solid #ff4444;
+      box-shadow: 0 0 20px #ff0000;
+      transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
     }
 
-    .music-link:hover {
-      background: rgba(255, 0, 0, 0.4);
-      box-shadow: 0 0 15px #ff4444;
+    .music-img-link:hover {
+      box-shadow: 0 0 40px #ff0000;
+      transform: scale(1.05);
+    }
+
+    .music-img-link img {
+      max-width: 200px;
+      height: auto;
+      border-radius: 1rem;
+      display: block;
     }
   </style>
 </head>
@@ -94,8 +96,12 @@
 
   <div class="content">
     <h1>Listen to the Voice</h1>
-    <a class="music-link" href="https://youtube.com/@show.me.wicked?si=wa36ywbOrfS0B8_7" target="_blank">YouTube</a>
-    <a class="music-link" href="https://doctorjesus.bandcamp.com/music" target="_blank">Bandcamp</a>
+    <a class="music-img-link" href="https://youtube.com/@show.me.wicked?si=wa36ywbOrfS0B8_7" target="_blank">
+      <img src="https://i.postimg.cc/50VFdwRs/YT-logo.png" alt="YouTube" />
+    </a>
+    <a class="music-img-link" href="https://doctorjesus.bandcamp.com/music" target="_blank">
+      <img src="https://i.postimg.cc/zfL9ZhgH/bandcamp.png" alt="Bandcamp" />
+    </a>
   </div>
 
 </body>
