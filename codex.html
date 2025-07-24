@@ -51,7 +51,7 @@
     .content {
       position: relative;
       z-index: 1;
-      top: 35vh;
+      top: 30vh;
       text-align: center;
     }
 
@@ -61,23 +61,25 @@
       margin-bottom: 2rem;
     }
 
-    .codex-link {
-      display: block;
-      margin: 1rem auto;
-      padding: 1rem 2rem;
-      background: rgba(255, 0, 0, 0.2);
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      width: fit-content;
-      border-radius: 2rem;
-      border: 1px solid #ff4444;
-      transition: all 0.3s ease;
+    .codex-img-link {
+      display: inline-block;
+      margin: 1rem;
+      border-radius: 1rem;
+      border: 2px solid #ff4444;
+      box-shadow: 0 0 20px #ff0000;
+      transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
     }
 
-    .codex-link:hover {
-      background: rgba(255, 0, 0, 0.4);
-      box-shadow: 0 0 15px #ff4444;
+    .codex-img-link:hover {
+      box-shadow: 0 0 40px #ff0000;
+      transform: scale(1.02);
+    }
+
+    .codex-img-link img {
+      max-width: 250px;
+      height: auto;
+      border-radius: 1rem;
+      display: block;
     }
   </style>
 </head>
@@ -93,8 +95,12 @@
 
   <div class="content">
     <h1>The Aeon Codex</h1>
-    <a class="codex-link" href="https://books2read.com/u/mZMlRD" target="_blank">Volume 1</a>
-    <a class="codex-link" href="https://books2read.com/u/mvwzel" target="_blank">Volume 2</a>
+    <a class="codex-img-link" href="https://books2read.com/u/mZMlRD" target="_blank">
+      <img src="https://i.postimg.cc/4d7KBx2Z/Volume-1.png" alt="Volume 1 Cover" />
+    </a>
+    <a class="codex-img-link" href="https://books2read.com/u/mvwzel" target="_blank">
+      <img src="https://i.postimg.cc/nrqXfwtP/Volume-2.png" alt="Volume 2 Cover" />
+    </a>
   </div>
 
 </body>
