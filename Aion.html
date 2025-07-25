@@ -5,13 +5,11 @@
   <title>Aion Prophecy Chamber</title>
   <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
   <style>
-    body {
+    html, body {
       margin: 0;
       padding: 0;
       height: 100%;
       overflow: hidden;
-      background: url('https://i.postimg.cc/3xB9vSQH/Aion-temple.jpg') no-repeat center center fixed;
-      background-size: cover;
       font-family: 'MedievalSharp', cursive;
       color: #ff4444;
       animation: fadeIn 2s ease-in;
@@ -22,18 +20,34 @@
       to   { opacity: 1; }
     }
 
-    @keyframes flicker {
+    @keyframes flickerBG {
       0%, 100% { opacity: 1; }
-      45%      { opacity: 0.97; }
-      50%      { opacity: 0.99; }
-      55%      { opacity: 0.96; }
-      60%      { opacity: 1; }
-      75%      { opacity: 0.98; }
+      45% { opacity: 0.97; }
+      50% { opacity: 0.99; }
+      55% { opacity: 0.96; }
+      60% { opacity: 1; }
+      75% { opacity: 0.98; }
+    }
+
+    @keyframes pulseBG {
+      0%, 100% { transform: scale(1); filter: brightness(1); }
+      50% { transform: scale(1.02); filter: brightness(1.05); }
     }
 
     @keyframes glow {
       0%, 100% { text-shadow: 0 0 10px #ff0000; }
       50% { text-shadow: 0 0 20px #ff4444; }
+    }
+
+    .background {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://i.postimg.cc/3xB9vSQH/Aion-temple.jpg') no-repeat center center fixed;
+      background-size: cover;
+      z-index: -2;
+      animation: flickerBG 6s infinite ease-in-out, pulseBG 20s infinite ease-in-out;
     }
 
     .prophecy {
@@ -43,7 +57,7 @@
       transform: translate(-50%, -50%);
       font-size: 2rem;
       text-align: center;
-      animation: flicker 7s infinite, glow 4s infinite;
+      animation: glow 4s infinite;
       width: 90%;
       max-width: 800px;
     }
@@ -66,6 +80,8 @@
   </style>
 </head>
 <body>
+
+  <div class="background"></div>
 
   <div class="prophecy" id="prophecyText">
     “The Aeon Children dream in numbers not yet born...”
