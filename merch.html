@@ -9,13 +9,14 @@
     html, body {
       margin: 0;
       padding: 0;
-      height: 100%;
+      min-height: 100%;
       background: url('https://i.postimg.cc/RVCYXv36/355-sigil.jpg') no-repeat center center fixed;
       background-size: cover;
       color: #fff;
       font-family: 'Segoe UI', sans-serif;
       animation: fadeIn 2s ease-in;
-      overflow: hidden;
+      overflow-x: hidden;
+      overflow-y: auto;
     }
 
     @keyframes fadeIn {
@@ -64,8 +65,9 @@
     .content {
       position: relative;
       z-index: 1;
-      top: 30vh;
       text-align: center;
+      padding-top: 30vh;
+      padding-bottom: 5rem;
     }
 
     h1 {
