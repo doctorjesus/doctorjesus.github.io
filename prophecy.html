@@ -2,33 +2,26 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Doctor Jesus | Prophecy</title>
   <!-- Load MedievalSharp font -->
   <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
   <style>
-    /* Fixed background layer to avoid mobile 'white bottom' glitch */
-    .bg {
-      position: fixed;
-      inset: 0;
-      background: url('https://i.postimg.cc/RVCYXv36/355-sigil.jpg') no-repeat center center;
-      background-size: cover;
-      z-index: -1;
-      will-change: transform;
-      pointer-events: none; /* purely visual */
-    }
-
     html, body {
       margin: 0;
       padding: 0;
-      background: #000; /* fallback color behind the fixed layer */
+      background: url('https://i.postimg.cc/RVCYXv36/355-sigil.jpg') no-repeat center center;
+      background-size: cover;
+      background-attachment: fixed; /* Keeps background locked during scroll */
       color: #fff;
       font-family: 'Segoe UI', sans-serif;
       animation: fadeIn 2s ease-in;
       overflow-x: hidden;
     }
 
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
 
     @keyframes glowPulseRed {
       0%, 100% { text-shadow: 0 0 12px #ff0000; }
@@ -41,13 +34,21 @@
     }
 
     @keyframes goldPulseImage {
-      0%, 100% { filter: drop-shadow(0 0 5px #FFD700); }
-      50% { filter: drop-shadow(0 0 20px #FFD700); }
+      0%, 100% {
+        filter: drop-shadow(0 0 5px #FFD700);
+      }
+      50% {
+        filter: drop-shadow(0 0 20px #FFD700);
+      }
     }
 
     @keyframes orangePulseImage {
-      0%, 100% { filter: drop-shadow(0 0 5px orange); }
-      50% { filter: drop-shadow(0 0 20px orange); }
+      0%, 100% {
+        filter: drop-shadow(0 0 5px orange);
+      }
+      50% {
+        filter: drop-shadow(0 0 20px orange);
+      }
     }
 
     nav {
@@ -81,8 +82,6 @@
     .content {
       padding-top: 8rem;
       text-align: center;
-      position: relative;
-      z-index: 1; /* above the fixed bg */
     }
 
     .ep-title {
@@ -103,7 +102,9 @@
       transition: filter 0.3s ease-in-out;
     }
 
-    .ep-cover:hover { filter: drop-shadow(0 0 30px #ff0000); }
+    .ep-cover:hover {
+      filter: drop-shadow(0 0 30px #ff0000);
+    }
 
     .aeon-title {
       font-family: 'MedievalSharp', cursive;
@@ -129,13 +130,12 @@
       transition: transform 0.3s ease-in-out;
     }
 
-    .revel-logo:hover { transform: scale(1.05); }
+    .revel-logo:hover {
+      transform: scale(1.05);
+    }
   </style>
 </head>
 <body>
-
-  <!-- Fixed background layer -->
-  <div class="bg" aria-hidden="true"></div>
 
   <nav>
     <a href="index.html">Home</a>
@@ -153,7 +153,7 @@
     <img src="https://i.postimg.cc/gkCBcnB3/Aeon-House-Publishing.png" alt="Aeon House Publishing" class="aeon-image" />
 
     <!-- REVEL–AGI Logo Link -->
-    <a href="https://revel.doctorjesus.art" target="_blank" rel="noopener">
+    <a href="https://revel.doctorjesus.art" target="_blank">
       <img src="https://i.postimg.cc/NjqjGyWZ/REVEL-AGI-LOGO.png" alt="REVEL–AGI Logo" class="revel-logo" />
     </a>
   </div>
