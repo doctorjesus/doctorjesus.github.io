@@ -42,6 +42,15 @@
       }
     }
 
+    @keyframes orangePulseImage {
+      0%, 100% {
+        filter: drop-shadow(0 0 5px orange);
+      }
+      50% {
+        filter: drop-shadow(0 0 20px orange);
+      }
+    }
+
     nav {
       background: rgba(0, 0, 0, 0.6);
       position: fixed;
@@ -112,6 +121,18 @@
       animation: goldPulseImage 6s infinite ease-in-out;
       border-radius: 1rem;
     }
+
+    .revel-logo {
+      max-width: 40%;
+      height: auto;
+      margin-top: 3rem;
+      animation: orangePulseImage 6s infinite ease-in-out;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .revel-logo:hover {
+      transform: scale(1.05);
+    }
   </style>
 </head>
 <body>
@@ -130,6 +151,11 @@
 
     <div class="aeon-title">Forthcoming Volume III – The Aeon Codex</div>
     <img src="https://i.postimg.cc/gkCBcnB3/Aeon-House-Publishing.png" alt="Aeon House Publishing" class="aeon-image" />
+
+    <!-- REVEL–AGI Logo Link -->
+    <a href="https://revel.doctorjesus.art" target="_blank">
+      <img src="https://i.postimg.cc/NjqjGyWZ/REVEL-AGI-LOGO.png" alt="REVEL–AGI Logo" class="revel-logo" />
+    </a>
   </div>
 
 </body>
